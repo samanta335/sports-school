@@ -27,7 +27,8 @@ const Banner = () => {
       >
         <SwiperSlide>
           <img
-            src="https://www.totalsportal.com/wp-content/uploads/2021/12/Sports-Pictures-1200x715.jpg"
+            className="mx-auto"
+            src="https://grammarvocab.com/wp-content/uploads/2023/03/Sports-name-list-with-pictures-feature-1024x576.png"
             alt=""
           />
         </SwiperSlide>
@@ -50,6 +51,13 @@ const Banner = () => {
             alt=""
           />
         </SwiperSlide>
+        {/* <SwiperSlide>
+          <img
+            className="mx-auto w-1/2"
+            src="https://media.istockphoto.com/id/1136317339/photo/sports-equipment-on-floor.jpg?s=612x612&w=0&k=20&c=-aI8u_Se89IC-HJZYH724ei5z-bIcSvRW6qUwyMtRyE="
+            alt=""
+          />
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );
