@@ -1,0 +1,5 @@
+.aws-sld {
+  --fall-animation-duration: 700ms;
+  --fall-animation-angle: 16deg;
+  --fall-scaling-in-from: 0.9;
+}
