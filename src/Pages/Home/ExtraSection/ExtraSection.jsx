@@ -1,11 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-// import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
@@ -39,7 +36,7 @@ const ExtraSection = () => {
         className="mySwiper"
       >
         {reviews.map((review) => (
-          <SwiperSlide key={review._id}>
+          <SwiperSlide key={review.id}>
             <h1 className="text-3xl text-center mt-10 uppercase font-medium">
               Reviews About School
               <br />
