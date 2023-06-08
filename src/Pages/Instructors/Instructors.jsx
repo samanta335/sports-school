@@ -4,7 +4,7 @@ const Instructors = () => {
   const [instructors, setInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("instructors.json")
+    fetch("http://localhost:5000/instructors")
       .then((res) => res.json())
       .then((data) => setInstructors(data));
   }, []);
@@ -12,7 +12,7 @@ const Instructors = () => {
   return (
     <div className="container grid grid-cols-3 mx-auto mb-5">
       {instructors.map((teacher) => (
-        <div key={teacher.id}>
+        <div key={teacher._id}>
           <div className="card mb-5 mt-9 w-96 bg-base-100 shadow-xl">
             <figure>
               <img src={teacher.img} alt="Shoes" />

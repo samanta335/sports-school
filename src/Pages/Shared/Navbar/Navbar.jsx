@@ -69,7 +69,11 @@ const Navbar = () => {
               <Link className="pr-52" to="/dashboard">
                 Dashboard
               </Link>
-              <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+              <img
+                className="w-10 pr-1 rounded-full"
+                src={user?.photoURL}
+                alt=""
+              />
               <button
                 className="btn btn-primary text-base mr-10"
                 onClick={handleLogOut}

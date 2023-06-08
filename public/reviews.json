@@ -1,27 +1,23 @@
 [
   {
-    "id": 1,
     "img": "https://img.freepik.com/free-photo/brunette-business-woman-with-wavy-long-hair-blue-eyes-stands-holding-notebook-hands_197531-343.jpg?w=2000",
     "details": " Sports School is the only dedicated sports school in . Focused on developing the athletes of the future, the school focuses on badminton, bowling, fencing, football, netball, shooting, swimming. ",
     "name": "Amayra",
     "rating": 3
   },
   {
-    "id": 2,
     "img": "https://i.pinimg.com/736x/11/90/90/11909086895b7da2bfbb7978cbea3025.jpg",
     "details": "Sports School is the only dedicated sports school in . Focused on developing the athletes of the future, the school focuses on badminton, bowling, fencing, football, netball, shooting, swimming. ",
     "name": "Rayan",
     "rating": 2
   },
   {
-    "id": 3,
     "img": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVzaW5lc3MlMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
     "details": "Sports School is the only dedicated sports school in . Focused on developing the athletes of the future, the school focuses on badminton, bowling, fencing, football, netball, shooting, swimming. ",
     "name": "Mahira",
     "rating": 4
   },
   {
-    "id": 4,
     "img": "https://img.freepik.com/free-photo/portrait-happy-woman-with-digital-tablet_329181-11681.jpg?w=2000",
     "details": "Sports School is the only dedicated sports school in . Focused on developing the athletes of the future, the school focuses on badminton, bowling, fencing, football, netball, shooting, swimming. ",
     "name": "Ehon",

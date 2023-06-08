@@ -56,7 +56,16 @@ const PopularInstructor = () => {
             <p>Name- Andy janson</p>
           </div>
         </SwiperSlide>
-
+        <SwiperSlide>
+          <img
+            src="https://media.istockphoto.com/id/1135084417/photo/lady-basketball-coach-on-court.jpg?s=612x612&w=0&k=20&c=Fjgr35Jnvvyqd6z_yN0-MFePrALhqoEEvACn0-gCLnE="
+            alt=""
+          />
+          <div className="text-center">
+            <p className="text-2xl">Instructor of Basketball sport</p>
+            <p>Name- Alvin</p>
+          </div>
+        </SwiperSlide>
         <SwiperSlide>
           <img
             src="https://www.badmintonplanet.com/wp-content/uploads/2023/03/3-5-2023-badminton-news-Herry-Iman-Pierngadi-Confirms-Job-Offer-From-China.jpg"
@@ -75,16 +84,6 @@ const PopularInstructor = () => {
           <div className="text-center">
             <p className="text-2xl">Instructor of Swimming sport</p>
             <p>Name- Savana</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://kansascityymca.org/sites/default/files/styles/media_half/public/images/2018-07/coachfred.jpg?itok=1BJLJDN-"
-            alt=""
-          />
-          <div className="text-center">
-            <p className="text-2xl">Instructor of Basketball sport</p>
-            <p>Name- Swam Jemin</p>
           </div>
         </SwiperSlide>
       </Swiper>

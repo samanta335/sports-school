@@ -12,7 +12,7 @@ const ExtraSection = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -36,7 +36,7 @@ const ExtraSection = () => {
         className="mySwiper"
       >
         {reviews.map((review) => (
-          <SwiperSlide key={review.id}>
+          <SwiperSlide key={review._id}>
             <h1 className="text-3xl text-center mt-10 uppercase font-medium">
               Reviews About School
               <br />
