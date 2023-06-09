@@ -70,6 +70,7 @@ const Navbar = () => {
                 Dashboard
               </Link>
               <img
+                referrerPolicy="no-referrer"
                 className="w-10 pr-1 rounded-full"
                 src={user?.photoURL}
                 alt=""
