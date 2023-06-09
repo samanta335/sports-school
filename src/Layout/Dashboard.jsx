@@ -47,14 +47,14 @@ const Dashboard = () => {
             ) : isInstructor ? (
               <>
                 <li>
-                  <NavLink to="/">
-                    <FaHome></FaHome> Home
-                  </NavLink>
                   <NavLink to="addClass">
                     <FaPlusSquare></FaPlusSquare>Add a Class
                   </NavLink>
                   <NavLink to="myClass">
                     <FaBookmark></FaBookmark>My Classes
+                  </NavLink>
+                  <NavLink to="/">
+                    <FaHome></FaHome> Home
                   </NavLink>
                 </li>
               </>
