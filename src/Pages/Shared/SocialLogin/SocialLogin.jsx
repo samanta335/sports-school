@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SocialLogin = () => {
   const { googleSignIn } = useContext(AuthContext);
@@ -12,7 +13,7 @@ const SocialLogin = () => {
   const handleGoogle = () => {
     googleSignIn().then((result) => {
       const loggedUser = result.user;
-      // console.log(loggedUser);
+
       const saveUser = {
         name: loggedUser.displayName,
         email: loggedUser.email,
@@ -26,6 +27,15 @@ const SocialLogin = () => {
       })
         .then((res) => res.json())
         .then(() => {
+          Swal.fire({
+            title: "User Login Successful.",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
           navigate(from, { replace: true });
         });
     });

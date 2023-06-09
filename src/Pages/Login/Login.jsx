@@ -33,14 +33,6 @@ const Login = () => {
       navigate(from, { replace: true });
     });
   };
-  //   const handleValidate = (e) => {
-  //     const value = e.target.value;
-  //     if (validateCaptcha(value)) {
-  //       setDisable(false);
-  //     } else {
-  //       setDisable(true);
-  //     }
-  //   };
 
   return (
     <div className="hero min-h-screen bg-base-200">

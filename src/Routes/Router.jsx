@@ -7,6 +7,9 @@ import ErrorPage from "../Pages/Home/ErrorPage/ErrorPage";
 import Instructors from "../Pages/Instructors/Instructors";
 import Dashboard from "../Layout/Dashboard";
 import ManageUser from "../Pages/Dashboard/AdminDashboard/ManageUser/ManageUser";
+import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass/AddClass";
+import AdminInstructorRoute from "./AdminInstructorRoute";
+import MyClass from "../Pages/Dashboard/InstructorDashboard/MyClass/MyClass";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,9 +38,24 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard></Dashboard>,
     children: [
+      // admin route
       {
         path: "manageUser",
-        element: <ManageUser></ManageUser>,
+        element: (
+          <AdminInstructorRoute>
+            <ManageUser></ManageUser>
+          </AdminInstructorRoute>
+        ),
+      },
+      {},
+      // instructor route
+      {
+        path: "addClass",
+        element: <AddClass></AddClass>,
+      },
+      {
+        path: "myClass",
+        element: <MyClass></MyClass>,
       },
     ],
   },
