@@ -1,8 +1,15 @@
-import UseClass from "../../../../Hook/UseClass";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const MyClass = () => {
-  const [myClass] = UseClass();
-  // console.log(myClass);
+  const { user } = useContext(AuthContext);
+  const [myClass, setMyClass] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/myClass/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setMyClass(data));
+  }, [user]);
+
   return (
     <div className="overflow-x-auto w-full p-5">
       <table className="table">
@@ -10,7 +17,7 @@ const MyClass = () => {
           <tr>
             <th>#</th>
             <th>Class Image</th>
-            <th> Name</th>
+            <th>Class Name</th>
             <th> Seats</th>
             <th>Price</th>
             <th>Status</th>
@@ -37,8 +44,13 @@ const MyClass = () => {
               <td>{classes.className}</td>
               <td>{classes.seat}</td>
               <td>{classes.price}</td>
-              <td>pending</td>
-              <td></td>
+              <td>
+                {classes.role === "approved"
+                  ? "approved"
+                  : classes.role === "denied"
+                  ? "denied"
+                  : "pending"}
+              </td>
               <td></td>
             </tr>
           ))}

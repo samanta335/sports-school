@@ -14,10 +14,9 @@ const Dashboard = () => {
   const [isInstructor] = UseInstructor();
   return (
     <div>
-      <div className="drawer lg:drawer-open">
+      <div className="drawer lg:drawer-open ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
-          {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
@@ -26,10 +25,9 @@ const Dashboard = () => {
           </label>
           <Outlet></Outlet>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu  text-base p-4 w-80 h-full bg-secondary-content text-base-content">
-            {/* Sidebar content here */}
+          <ul className="menu text-base p-4 w-60 h-full bg-secondary-content text-base-content">
             {isAdmin ? (
               <>
                 <li>
@@ -47,14 +45,14 @@ const Dashboard = () => {
             ) : isInstructor ? (
               <>
                 <li>
+                  <NavLink to="/">
+                    <FaHome></FaHome> Home
+                  </NavLink>
                   <NavLink to="addClass">
                     <FaPlusSquare></FaPlusSquare>Add a Class
                   </NavLink>
                   <NavLink to="myClass">
                     <FaBookmark></FaBookmark>My Classes
-                  </NavLink>
-                  <NavLink to="/">
-                    <FaHome></FaHome> Home
                   </NavLink>
                 </li>
               </>

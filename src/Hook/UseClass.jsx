@@ -10,7 +10,7 @@ const UseClass = () => {
     queryKey: ["myClass"],
     queryFn: async () => {
       const res = await axiosSecure("/myClass");
-      console.log("here", res.data);
+      // console.log("here", res.data);
       return res.data;
     },
   });
