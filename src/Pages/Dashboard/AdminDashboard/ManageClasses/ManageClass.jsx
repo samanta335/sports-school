@@ -1,17 +1,28 @@
 import { useState } from "react";
-import UseClass from "../../../../Hook/UseClass";
+
 import { useForm } from "react-hook-form";
 import UseAxios from "../../../../Hook/UseAxios";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
+import { useQuery } from "@tanstack/react-query";
 
 const ManageClass = () => {
-  const [myClass, refetch] = UseClass();
   const [axiosSecure] = UseAxios();
   const [disable, setDisable] = useState(false);
   const { register, handleSubmit, reset } = useForm();
+  const { data: myClass = [], refetch } = useQuery({
+    queryKey: ["myClass"],
+    queryFn: async () => {
+      const res = await axiosSecure("/myClass");
+      // console.log("here", res.data);
+      return res.data;
+    },
+  });
 
   const onSubmit = (data) => {
-    // axiosSecure.post(`/myClass/feedback/$`, data).then((data) => {
+    reset();
+    console.log(data);
+
+    // axiosSecure.post(`/myClass/${classes._id}`, data).then((data) => {
     //   console.log(data.data);
     //   if (data.data.insertedId) {
     //     reset();
@@ -24,8 +35,6 @@ const ManageClass = () => {
     //     });
     //   }
     // });
-    reset();
-    console.log(data);
   };
 
   const handleApprove = (classes) => {
