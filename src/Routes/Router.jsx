@@ -13,6 +13,7 @@ import ManageClass from "../Pages/Dashboard/AdminDashboard/ManageClasses/ManageC
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import ClassesPage from "../Pages/ClassesPage/ClassesPage";
+import SelectedClass from "../Pages/Dashboard/StudentDashboard/SelectedClass/SelectedClass";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -78,6 +79,11 @@ const router = createBrowserRouter([
             <MyClass></MyClass>
           </InstructorRoute>
         ),
+      },
+      // student route
+      {
+        path: "selectClass",
+        element: <SelectedClass></SelectedClass>,
       },
     ],
   },

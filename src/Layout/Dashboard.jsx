@@ -57,7 +57,16 @@ const Dashboard = () => {
                 </li>
               </>
             ) : (
-              <></>
+              <>
+                <li>
+                  <NavLink to="/">
+                    <FaHome></FaHome> Home
+                  </NavLink>
+                  <NavLink to="selectClass">
+                    <FaBookmark></FaBookmark>My Selected Class
+                  </NavLink>
+                </li>
+              </>
             )}
           </ul>
         </div>
