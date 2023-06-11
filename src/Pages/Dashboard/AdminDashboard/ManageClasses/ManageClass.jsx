@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import UseAxios from "../../../../Hook/UseAxios";
 // import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
 const ManageClass = () => {
   const [axiosSecure] = UseAxios();
@@ -44,7 +44,9 @@ const ManageClass = () => {
       .then((data) => {
         if (data.modifiedCount) {
           refetch();
-          setDisable(true);
+          if (classes.role === "approved") {
+            setDisable(true);
+          }
         }
       });
   };
@@ -57,6 +59,8 @@ const ManageClass = () => {
       .then((data) => {
         if (data.modifiedCount) {
           refetch();
+        }
+        if (classes.role === "denied") {
           setDisable(true);
         }
       });

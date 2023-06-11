@@ -33,6 +33,7 @@ const ClassesPage = () => {
       className,
       price,
       seat,
+      email: user.email,
     };
     axiosSecure.post(`/selectClass`, select).then((res) => {
       console.log(res.data);
@@ -41,7 +42,7 @@ const ClassesPage = () => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Food added on the cart.",
+          title: "Class Selected Done.",
           showConfirmButton: false,
           timer: 1500,
         });

@@ -1,18 +1,14 @@
 import Swal from "sweetalert2";
 import UseAxios from "../../../../Hook/UseAxios";
-import { useQuery } from "@tanstack/react-query";
+
 import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+import UseSelectClass from "../../../../Hook/UseSelectClass";
 
 const SelectedClass = () => {
   const [axiosSecure] = UseAxios();
-
-  const { data: selectClass = [], refetch } = useQuery({
-    queryKey: ["selectClass"],
-    queryFn: async () => {
-      const res = await axiosSecure("/selectClass");
-      return res.data;
-    },
-  });
+  const [selectClass, refetch] = UseSelectClass();
 
   const handleDelete = (select) => {
     Swal.fire({
@@ -36,24 +32,24 @@ const SelectedClass = () => {
   };
   return (
     <div className="overflow-x-auto  ">
-      <table className="table text-center mt-5">
-        <thead>
+      <h1 className="text-2xl text-purple-600 text-center font-medium">
+        Total Selected Class: {selectClass.length}
+      </h1>
+      <table className="table text-center mt-2">
+        <thead className="bg-base-200">
           <tr>
-            <th>#</th>
             <th>Class Image</th>
-
             <th>Class Name</th>
             <th>Instructor Name</th>
             <th>Available Seats</th>
             <th>Price</th>
             <th>Action</th>
+            <th>Payment</th>
           </tr>
         </thead>
         <tbody>
-          {selectClass.map((select, index) => (
+          {selectClass.map((select) => (
             <tr key={select._id}>
-              <td>{index + 1}</td>
-
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
@@ -70,7 +66,6 @@ const SelectedClass = () => {
               <td>{select.name}</td>
               <td>{select.seat}</td>
               <td>{select.price}</td>
-
               <td>
                 <button
                   onClick={() => handleDelete(select)}
@@ -78,6 +73,16 @@ const SelectedClass = () => {
                 >
                   <FaTrashAlt></FaTrashAlt>
                 </button>
+              </td>
+              <td>
+                <Link to="/dashboard/payment">
+                  <button
+                    className="btn btn-sm bg-purple-700 text-white"
+                    // onClick={() => handleGet(select)}
+                  >
+                    Pay
+                  </button>
+                </Link>
               </td>
             </tr>
           ))}
