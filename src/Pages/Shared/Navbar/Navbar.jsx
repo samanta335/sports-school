@@ -20,13 +20,38 @@ const Navbar = () => {
       <li>
         <Link to="/classes">Classes</Link>
       </li>
+      <li>
+        {user ? (
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+            <img
+              referrerPolicy="no-referrer"
+              className="w-12 pr-1 rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+            <button
+              className="btn btn-primary text-base"
+              onClick={handleLogOut}
+            >
+              Logout
+            </button>
+          </li>
+        ) : (
+          <li>
+            <Link className="btn btn-primary text-base" to="/login">
+              Login
+            </Link>
+          </li>
+        )}
+      </li>
     </>
   );
 
   return (
     <div className="h-full">
       <div className="navbar  bg-base-200 text-slate-600">
-        <div className="navbar-start ">
+        <div className=" pr-16">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -59,12 +84,12 @@ const Navbar = () => {
           <a className="  uppercase text-2xl font-medium">Sports School</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-base font-medium">
+          <ul className="menu menu-horizontal text-base font-medium">
             {navRoute}
           </ul>
         </div>
-        <div className="navbar-end ">
-          {user ? (
+        {/* <div className="navbar-end "> */}
+        {/* {user ? (
             <>
               <Link className="pr-52" to="/dashboard">
                 Dashboard
@@ -86,8 +111,8 @@ const Navbar = () => {
             <Link className="btn btn-primary text-base mr-10" to="/login">
               Login
             </Link>
-          )}
-        </div>
+          )} */}
+        {/* </div> */}
       </div>
     </div>
   );

@@ -1,9 +1,7 @@
 import Swal from "sweetalert2";
 import UseAxios from "../../../../Hook/UseAxios";
-
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 import UseSelectClass from "../../../../Hook/UseSelectClass";
 
 const SelectedClass = () => {

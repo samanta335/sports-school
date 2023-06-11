@@ -36,7 +36,6 @@ const ClassesPage = () => {
       email: user.email,
     };
     axiosSecure.post(`/selectClass`, select).then((res) => {
-      console.log(res.data);
       if (res.data.insertedId) {
         refetch();
         Swal.fire({

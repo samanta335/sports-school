@@ -44,8 +44,11 @@ const SocialLogin = () => {
   return (
     <div>
       <div className="divider"></div>
-      <div className="w-full text-center my-4 ">
-        <button onClick={handleGoogle} className="btn btn-circle btn-outline">
+      <div className="text-center my-4 ">
+        <button
+          onClick={handleGoogle}
+          className="btn bg-purple-400 btn-circle btn-outline"
+        >
           <FaGoogle></FaGoogle>
         </button>
       </div>

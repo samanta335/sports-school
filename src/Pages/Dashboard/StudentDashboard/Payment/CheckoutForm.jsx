@@ -3,6 +3,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import UseAxios from "../../../../Hook/UseAxios";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 const CheckoutForm = ({ selectClass, price }) => {
   const { user } = useContext(AuthContext);
   const stripe = useStripe();
@@ -74,12 +75,16 @@ const CheckoutForm = ({ selectClass, price }) => {
         classImage: selectClass.map((classes) => classes.image),
         className: selectClass.map((classes) => classes.className),
         instructor: selectClass.map((classes) => classes.name),
-        seat: selectClass.reduce((seats) => seats.seat, 1),
       };
       axiosSecure.post("/payments", payment).then((res) => {
-        console.log(res.data);
-        if (res.data.insertedId) {
-          // display confirm
+        if (res.data.insertResult.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "payment Done.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
     }

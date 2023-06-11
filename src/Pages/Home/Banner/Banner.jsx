@@ -27,8 +27,8 @@ const Banner = () => {
       >
         <SwiperSlide>
           <img
-            className="mx-auto"
-            src="https://grammarvocab.com/wp-content/uploads/2023/03/Sports-name-list-with-pictures-feature-1024x576.png"
+            className="1/2"
+            src="https://img.freepik.com/free-vector/realistic-sports-balls-bat-other-equipment-vector-big-set_1150-40626.jpg?w=2000"
             alt=""
           />
         </SwiperSlide>
