@@ -28,31 +28,20 @@ const PopularInstructor = () => {
       >
         <SwiperSlide>
           <img
-            src="https://www.aljazeera.com/wp-content/uploads/2022/12/2022-12-12T130434Z_965380455_UP1EICC10BJ0O_RTRMADP_3_SOCCER-WORLDCUP-ARG-CRO-PREVIEW-1.jpg?w=770&resize=770%2C505"
+            src="https://img.freepik.com/free-photo/handsome-football-player-stadium-business-suit_1303-16335.jpg"
             alt=""
           />
           <div className="text-center">
-            <p className="text-2xl">Instructor of Football sport</p>
             <p>Name- Scaloni</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://pbs.twimg.com/media/FvMnP93WYAAmr1-?format=jpg&name=medium"
-            alt=""
-          />
-          <div className="text-center">
-            <p className="text-2xl">Instructors of Cricket sport</p>
-            <p>Name- kanan</p>
-          </div>
-        </SwiperSlide>
+
         <SwiperSlide>
           <img
             src="https://media.istockphoto.com/id/1162974893/photo/cheerful-athletic-man-smiling-after-training-on-tennis-court.jpg?s=612x612&w=0&k=20&c=-NypjaIJAr9Mp3LlEIvnYhQk5w5osXN8CJWJJFGXTXA="
             alt=""
           />
           <div className="text-center">
-            <p className="text-2xl">Instructor of Tennis sport</p>
             <p>Name- Andy janson</p>
           </div>
         </SwiperSlide>
@@ -72,7 +61,6 @@ const PopularInstructor = () => {
             alt=""
           />
           <div className="text-center">
-            <p className="text-2xl">Instructor of Badminton sport</p>
             <p>Name- Paul Stewart</p>
           </div>
         </SwiperSlide>
@@ -82,8 +70,16 @@ const PopularInstructor = () => {
             alt=""
           />
           <div className="text-center">
-            <p className="text-2xl">Instructor of Swimming sport</p>
             <p>Name- Savana</p>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://pbs.twimg.com/media/FvMnP93WYAAmr1-?format=jpg&name=medium"
+            alt=""
+          />
+          <div className="text-center">
+            <p>Name- kanan</p>
           </div>
         </SwiperSlide>
       </Swiper>

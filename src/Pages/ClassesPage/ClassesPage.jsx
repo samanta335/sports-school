@@ -10,6 +10,7 @@ const ClassesPage = () => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [axiosSecure] = UseAxios();
+
   const approved = myClass.filter((classes) => classes.role === "approved");
 
   const handlePrivate = () => {
@@ -56,7 +57,6 @@ const ClassesPage = () => {
           <tr>
             <th>#</th>
             <th>Class Image</th>
-
             <th>Class Name</th>
             <th>Instructor Name</th>
             <th>Available Seats</th>

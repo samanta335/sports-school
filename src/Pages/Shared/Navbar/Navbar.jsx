@@ -9,49 +9,11 @@ const Navbar = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
-  const navRoute = (
-    <>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/instructors">Instructors</Link>
-      </li>
-      <li>
-        <Link to="/classes">Classes</Link>
-      </li>
-      <li>
-        {user ? (
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-            <img
-              referrerPolicy="no-referrer"
-              className="w-12 pr-1 rounded-full"
-              src={user?.photoURL}
-              alt=""
-            />
-            <button
-              className="btn btn-primary text-base"
-              onClick={handleLogOut}
-            >
-              Logout
-            </button>
-          </li>
-        ) : (
-          <li>
-            <Link className="btn btn-primary text-base" to="/login">
-              Login
-            </Link>
-          </li>
-        )}
-      </li>
-    </>
-  );
 
   return (
     <div className="h-full">
       <div className="navbar  bg-base-200 text-slate-600">
-        <div className=" pr-16">
+        <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -71,48 +33,72 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content  shadow bg-base-100 rounded-box w-52"
             >
-              {navRoute}
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/instructors">Instructors</Link>
+              </li>
+              <li>
+                <Link to="/classes">Classes</Link>
+              </li>
             </ul>
           </div>
           <img
-            className="rounded-full w-20 h-16 pr-3"
+            className="rounded-full w-16 h-12 pr-3 "
             src="https://previews.123rf.com/images/duug/duug1206/duug120600003/13966994-sport-logo.jpg"
             alt=""
           />
-          <a className="  uppercase text-2xl font-medium">Sports School</a>
+          <a className="  uppercase text-xl font-semibold">Sports School</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal text-base font-medium">
-            {navRoute}
+          <ul className="menu menu-horizontal  text-base font-medium">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/instructors">Instructors</Link>
+            </li>
+            <li>
+              <Link to="/classes">Classes</Link>
+            </li>
           </ul>
         </div>
-        {/* <div className="navbar-end "> */}
-        {/* {user ? (
-            <>
-              <Link className="pr-52" to="/dashboard">
-                Dashboard
-              </Link>
-              <img
-                referrerPolicy="no-referrer"
-                className="w-10 pr-1 rounded-full"
-                src={user?.photoURL}
-                alt=""
-              />
-              <button
-                className="btn btn-primary text-base mr-10"
-                onClick={handleLogOut}
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <Link className="btn btn-primary text-base mr-10" to="/login">
-              Login
-            </Link>
-          )} */}
-        {/* </div> */}
+        <div className="navbar-end lg:flex ">
+          <ul className="menu menu-horizontal text-base font-medium">
+            {user ? (
+              <>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+                <li>
+                  <img
+                    referrerPolicy="no-referrer"
+                    className="w-16 rounded-full"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <button
+                    className="btn btn-primary ml-5 text-base"
+                    onClick={handleLogOut}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link className="btn btn-primary text-base" to="/login">
+                  Login
+                </Link>
+              </li>
+            )}
+          </ul>
+        </div>
       </div>
     </div>
   );
