@@ -1,18 +1,17 @@
 import { useForm } from "react-hook-form";
 import UseAxios from "../../../../Hook/UseAxios";
-// import Swal from "sweetalert2";
+
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 
 const ManageClass = () => {
   const [axiosSecure] = UseAxios();
-  const [disable, setDisable] = useState(false);
+
   const { register, handleSubmit, reset } = useForm();
   const { data: myClass = [], refetch } = useQuery({
     queryKey: ["myClass"],
     queryFn: async () => {
       const res = await axiosSecure("/myClass");
-      // console.log("here", res.data);
+
       return res.data;
     },
   });
@@ -20,48 +19,34 @@ const ManageClass = () => {
   const onSubmit = (data) => {
     reset();
     console.log(data);
-
-    // axiosSecure.post(`/myClass/${classes._id}`, data).then((data) => {
-    //   console.log(data.data);
-    //   if (data.data.insertedId) {
-    //     reset();
-    //     Swal.fire({
-    //       position: "top-end",
-    //       icon: "success",
-    //       title: "Feedback Send Done",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    //   }
-    // });
   };
 
   const handleApprove = (classes) => {
-    fetch(`http://localhost:5000/myClass/approve/${classes._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-samanta335.vercel.app/myClass/approve/${classes._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
           refetch();
-          if (classes.role === "approved") {
-            setDisable(true);
-          }
         }
       });
   };
 
   const handleDeny = (classes) => {
-    fetch(`http://localhost:5000/myClass/deny/${classes._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://summer-camp-server-samanta335.vercel.app/myClass/deny/${classes._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
           refetch();
-        }
-        if (classes.role === "denied") {
-          setDisable(true);
         }
       });
   };
@@ -113,7 +98,6 @@ const ManageClass = () => {
               </td>
               <td>
                 <button
-                  disabled={disable}
                   onClick={() => handleApprove(classes)}
                   className="btn btn-xs btn-primary"
                 >
@@ -121,7 +105,6 @@ const ManageClass = () => {
                 </button>
 
                 <button
-                  disabled={disable}
                   onClick={() => handleDeny(classes)}
                   className="btn btn-xs mt-2 btn-error"
                 >

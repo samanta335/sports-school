@@ -15,4 +15,5 @@ Used package:
 -axios
 -react-icons
 -react-rating
-Live link:
+-react-awesome-reveal
+Live link: -https://summer-camp-4a50c.web.app/

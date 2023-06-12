@@ -11,6 +11,7 @@ const Home = () => {
       <PopularClass></PopularClass>
       <PopularInstructor></PopularInstructor>
       <ExtraSection></ExtraSection>
+
       <div className="text-center ">
         <Link className="btn btn-warning mb-10" to="/error">
           Want to Know More?

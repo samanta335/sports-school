@@ -4,8 +4,11 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const MyClass = () => {
   const { user } = useContext(AuthContext);
   const [myClass, setMyClass] = useState([]);
+
   useEffect(() => {
-    fetch(`http://localhost:5000/myClass/${user?.email}`)
+    fetch(
+      `https://summer-camp-server-samanta335.vercel.app/myClass/${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setMyClass(data));
   }, [user]);
@@ -51,7 +54,6 @@ const MyClass = () => {
                   ? "denied"
                   : "pending"}
               </td>
-              <td></td>
             </tr>
           ))}
         </tbody>
