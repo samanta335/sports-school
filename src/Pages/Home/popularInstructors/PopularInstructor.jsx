@@ -11,7 +11,7 @@ import { FreeMode, Pagination } from "swiper";
 const PopularInstructor = () => {
   return (
     <div>
-      <h2 className="text-3xl text-center mt-16 uppercase font-medium">
+      <h2 className="text-3xl text-center mt-24 uppercase font-medium">
         Popular Instructors
         <br />
         ----------------------

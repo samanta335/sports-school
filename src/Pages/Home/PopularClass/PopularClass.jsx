@@ -15,9 +15,12 @@ const PopularClass = () => {
         <br />
         ----------------------
       </h3>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3  gap-4">
         {popularClass.map((classes) => (
-          <div key={classes.id} className="card w-96 bg-base-100 shadow-xl">
+          <div
+            key={classes.id}
+            className="card mb-8 w-96 bg-base-100 shadow-xl"
+          >
             <div className="card-body">
               <h2 className="card-title">Class Name: {classes.className}</h2>
               <p>

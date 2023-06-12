@@ -37,7 +37,7 @@ const ExtraSection = () => {
       >
         {reviews.map((review) => (
           <SwiperSlide key={review._id}>
-            <h1 className="text-3xl text-center mt-10 uppercase font-medium">
+            <h1 className="text-3xl text-center mt-5 uppercase font-medium">
               Reviews About School
               <br />
               ----------------------
