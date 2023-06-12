@@ -51,7 +51,6 @@ const PopularInstructor = () => {
             alt=""
           />
           <div className="text-center">
-            <p className="text-2xl">Instructor of Basketball sport</p>
             <p>Name- Alvin</p>
           </div>
         </SwiperSlide>
