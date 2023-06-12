@@ -1,11 +1,11 @@
 - Website- Sports School
 - Website Features:
-- page about summer camp||sports school
-- Here is an admin pannel to control full website
-- And an instructor pannel for post his classes details
-- admin can approved or denied instructors posted class
-- and an user or student can select class or can enrooled by payment classes price
-- student can choose few classes
+- 1 page about summer camp||sports school
+- 2 Here is an admin pannel to control full website
+- 3 And an instructor pannel for post his classes details
+- 4 admin can approved or denied instructors posted class
+- 5 and an user or student can select class or can enrooled by payment classes price
+- 6 student can choose few classes
 - Used package:
 - tanstack query
 - reack-hook-form
